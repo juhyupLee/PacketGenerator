@@ -1,45 +1,47 @@
 {
+  "ProjectPath": "C:\\ProjectR\\AvatarGlobal_Server",
+
   "PROTOCOL":
   {
     "LGAD": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\AccountDB\\PacketHandler\\RegisterPacketHandler.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\AccountDB\\Entity\\Server\\LogInEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\AccountDB\\Entity\\Server\\LogInEntity.cpp",
+        "RegisterPath":  "\\Servers\\AccountDB\\PacketHandler\\RegisterPacketHandler.cpp",
+        "headerPath": "\\Servers\\AccountDB\\Entity\\Server\\LogInEntity.h",
+        "cppPath": "\\Servers\\AccountDB\\Entity\\Server\\LogInEntity.cpp",
         "Handler": "REGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(LogInEntity, _%s);\n",
         "Definition": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvoid LogInEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo\n\t{\n\t\n\n\n\t} while (false);\n\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
 
       "REP": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\ADBEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\ADBEntity.cpp",
+        "RegisterPath":  "\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
+        "headerPath": "\\Servers\\LogIn\\Entity\\Server\\ADBEntity.h",
+        "cppPath": "\\Servers\\LogIn\\Entity\\Server\\ADBEntity.cpp",
         "Handler": "REGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(ADBEntity, _%s);\n",
         "Definition": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvoid ADBEntity::_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo\n\t{\n\t\n\n\t} while (false);\n\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       }
     },
 
     "LGGW": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "RegisterPath":  "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "headerPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
+        "cppPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(LoginEntity, _%s);",
         "Definition": "void LoginEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo\n\t{\n\t\n\n\n\t} while (false);\n\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "RegisterPath":  "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "headerPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
+        "cppPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(LoginEntity, _%s);",
         "Definition": "void LoginEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo\n\t{\n\t\n\n\n\t} while (false);\n\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
@@ -53,59 +55,59 @@
     },
     "GWLG": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
+        "RegisterPath":  "\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
+        "headerPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
+        "cppPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
         "Handler": "REGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GateWayEntity, Handler_PKT_%s);",
         "Definition": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvoid GateWayEntity::Handler_PKT_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\tdo \n\t{\n\n\t} while (false);}",
-        "Declare": "//\n\tvoid  Handler_PKT_%s(UINT size);"
+        "Declare": "\tvoid  Handler_PKT_%s(UINT size);"
       },
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
+        "RegisterPath":  "\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
+        "headerPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
+        "cppPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GateWayEntity, _%s);",
         "Definition": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvoid GateWayEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "RegisterPath":  "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
+        "headerPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.h",
+        "cppPath": "\\Servers\\GateWay\\Entity\\Server\\LoginEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(LoginEntity, _%s);",
         "Definition": "void LoginEntity::_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tConsolePrint(LIGHT_WHITE, \"\");\n\n\tdo \n\t{\n\t\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\t} while (false);\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       }
     },
 
     "GWGS": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
+        "RegisterPath":  "\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
+        "headerPath": "\\Servers\\Game\\Entity\\Server\\GateWayEntity.h",
+        "cppPath": "\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GateWayEntity, _%s);",
         "Definition": "void GateWayEntity::_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tConsolePrint(LIGHT_WHITE, \"\");\n\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n}\n",
         "Declare": "//\n\tvoid  _%s(UINT size);"
       },
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
+        "RegisterPath":  "\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
+        "headerPath": "\\Servers\\Game\\Entity\\Server\\GateWayEntity.h",
+        "cppPath": "\\Servers\\Game\\Entity\\Server\\GateWayEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GateWayEntity, _%s);",
         "Definition": "void GateWayEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
+        "RegisterPath":  "\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
+        "headerPath": "\\Servers\\GateWay\\Entity\\Server\\GameEntity.h",
+        "cppPath": "\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameEntity, _%s);",
         "Definition": "void GameEntity::_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tConsolePrint(LIGHT_WHITE, \"\");\n\n\tdo \n\t{\n\t\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\t} while (false);\n}",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       }
     },
     "GSGW": {
@@ -119,12 +121,12 @@
       },
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
+        "RegisterPath":  "\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
+        "headerPath": "\\Servers\\GateWay\\Entity\\Server\\GameEntity.h",
+        "cppPath": "\\Servers\\GateWay\\Entity\\Server\\GameEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameEntity, _%s);",
         "Definition": "void GameEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
@@ -139,70 +141,70 @@
 
     "GSGD": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "RegisterPath":  "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "headerPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
+        "cppPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameEntity, _%s);",
         "Definition": "void GameEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "RegisterPath":  "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "headerPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
+        "cppPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameEntity, _%s);",
         "Definition": "void GameEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "RegisterPath":  "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "headerPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
+        "cppPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameDBEntity, _%s);",
         "Definition": "void GameDBEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       }
     },
 
     "GDGS": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "RegisterPath":  "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "headerPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
+        "cppPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameDBEntity, _%s);",
         "Definition": "void GameDBEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "CMD": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "RegisterPath":  "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
+        "headerPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.h",
+        "cppPath": "\\Servers\\Game\\Entity\\Server\\GameDBEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameDBEntity, _%s);",
         "Definition": "void GameDBEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       },
 
       "REP": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "RegisterPath":  "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
+        "headerPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.h",
+        "cppPath": "\\Servers\\GameDB\\Entity\\Server\\GameEntity.cpp",
         "Handler": "REGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GameEntity, _%s);",
         "Definition": "void GameEntity::_%s(UINT size)\n{\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo \n\t{\n\t\n\t} while (0);\n\n}\n",
-        "Declare": "//\n\tvoid _%s(UINT size);"
+        "Declare": "\tvoid _%s(UINT size);"
       }
     },
 
     "TOLG": {
       "QRY": {
-        "RegisterPath":  "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
-        "headerPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
-        "cppPath": "C:\\ProjectR\\AvatarGlobal_Server\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
+        "RegisterPath":  "\\Servers\\LogIn\\PacketHandler\\RegisterPacketHandler.cpp",
+        "headerPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.h",
+        "cppPath": "\\Servers\\LogIn\\Entity\\Server\\GateWayEntity.cpp",
         "Handler": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nREGISTER_HANDLER(%s) STREAM_PARSE_REGISTER_HANDLER(GateWayEntity, Handler_PKT_%s);",
         "Definition": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvoid GateWayEntity::Handler_PKT_%s(UINT size)\n{\n\tTRACE_THIS;\n\n\tGET_STREAM_PACKET(StreamPacket, recvPacket, size);\n\n\tdo\n\t{\n\n\t} while (false);\n\n}",
-        "Declare": "//\n\tvoid Handler_PKT_%s(UINT size);"
+        "Declare": "\tvoid Handler_PKT_%s(UINT size);"
       },
 
       "CMD": {

@@ -78,14 +78,47 @@ func WriteFile(path string, dataString []string) bool {
 	return true
 }
 
+func GetLastIndexInClass(className string, lines *[]string) int {
+	classIndex := 0
+	searchedIndex := 0
+	blockCount := 0
+	checkBlock := false
+	for index, value := range *lines {
+
+		if strings.Contains(value, className) {
+			classIndex = index
+		}
+		if classIndex != 0 {
+			if strings.Contains(value, "{") {
+				if checkBlock == false {
+					checkBlock = true
+				}
+				blockCount++
+			}
+			if strings.Contains(value, "}") {
+				blockCount--
+			}
+
+			if checkBlock && blockCount == 0 {
+				searchedIndex = index
+				break
+			}
+		}
+
+	}
+	return searchedIndex
+}
 func MakeHandler(packet string) {
 
 	splitString := strings.Split(packet, "_")
 	if len(splitString) < 2 {
-		fmt.Println("Packet format is invalid")
+		fmt.Printf("[%s]Packet format is invalid\n", packet)
 	}
-	protocol := protocolMap[splitString[0]].(map[string]interface{})
+	if splitString[1] != "QRY" && splitString[1] != "REP" && splitString[1] != "CMD" {
+		fmt.Printf("[%s]Packet format is invalid\n", packet)
+	}
 
+	protocol := protocolMap[splitString[0]].(map[string]interface{})
 	qryData := protocol[splitString[1]].(map[string]interface{})
 
 	registerPath := qryData["RegisterPath"].(string)
@@ -96,9 +129,18 @@ func MakeHandler(packet string) {
 	definition := qryData["Definition"].(string)
 
 	if registerPath == "" && headerPath == "" && cppPath == "" && handler == "" && declare == "" && definition == "" {
-		fmt.Printf("[%s] json 정보가 없다", packet)
+		fmt.Printf("[%s] json Data is invalid\n", packet)
 		return
 	}
+
+	registerPath = projectPath + registerPath
+	headerPath = projectPath + headerPath
+	cppPath = projectPath + cppPath
+
+	checkIndexs1 := strings.LastIndex(headerPath, "\\")
+	checkIndexs2 := strings.LastIndex(headerPath, ".")
+
+	className := "class " + headerPath[checkIndexs1+1:checkIndexs2]
 
 	insertString := fmt.Sprintf(handler, packet, packet)
 	lines := ReadFileToString(registerPath)
@@ -111,14 +153,9 @@ func MakeHandler(packet string) {
 	insertString = fmt.Sprintf(declare, packet)
 	lines = ReadFileToString(headerPath)
 
-	for index, value := range lines {
+	searchedIndex = GetLastIndexInClass(className, &lines)
 
-		if strings.Contains(value, "//Packet Handler") {
-			searchedIndex = index
-		}
-	}
-
-	lines = insert(lines, searchedIndex+1, insertString)
+	lines = insert(lines, searchedIndex, insertString)
 	WriteFile(headerPath, lines)
 
 	insertString = fmt.Sprintf(definition, packet)
@@ -129,18 +166,17 @@ func MakeHandler(packet string) {
 
 }
 
+var projectPath string
+
 func main() {
 
 	filePath := "protocol.json"
 
-	// 파일로부터 JSON 데이터를 읽습니다.
 	data, err := os.ReadFile(filePath)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return
 	}
-
-	// JSON 데이터를 저장할 구조체 변수를 선언합니다.
 
 	// JSON 데이터를 구조체에 언마샬링합니다.
 	err = json.Unmarshal(data, &jsonMap)
@@ -150,8 +186,10 @@ func main() {
 	}
 
 	protocolMap = jsonMap["PROTOCOL"].(map[string]interface{})
+	projectPath = jsonMap["ProjectPath"].(string)
+	protocolDirPath := projectPath + "\\Servers\\ServerShare\\Server\\"
 
-	result, resultStr := ExecCmd("C:\\ProjectR\\AvatarGlobal_Server\\Servers\\ServerShare\\Server\\", "git", "diff", "--", "./ServerProtocol.h")
+	result, resultStr := ExecCmd(protocolDirPath, "git", "diff", "--", "./ServerProtocol.h")
 
 	if result == false {
 		fmt.Println(resultStr)
@@ -182,7 +220,6 @@ func main() {
 		switch result[0] {
 		case "LGAD", "LGGW", "GWLG", "GWGS", "GSGW", "GSGD", "GDGS", "TOLG":
 			MakeHandler(value)
-
 		default:
 
 		}
